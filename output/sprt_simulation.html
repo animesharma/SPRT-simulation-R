@@ -193,16 +193,16 @@ sequential_probability_ratio_test = function(input_sequence, alpha, beta, theta)
     theta0 = theta[1]
     theta1 = theta[2]
 
-    # Calculate the lower and upper bounds for the stopping threshold
-    a = log(beta / (1 - alpha))
-    b = log((1 - beta) / alpha)
-
     # Calculate L(theta) for Bernoulli
     L_theta0 = (theta0 ^ input_sequence_sum) * ((1 - theta0) ^ (n - input_sequence_sum))
     L_theta1 = (theta1 ^ input_sequence_sum) * ((1 - theta1) ^ (n - input_sequence_sum))
 
     # Calculate the cumulative sum of the log-likelihood ratio
     cllr = log(L_theta1 / L_theta0)
+
+    # Calculate the lower and upper bounds for the stopping threshold
+    a = log(beta / (1 - alpha))
+    b = log((1 - beta) / alpha)
 
     # Return -1, 0 or 1 based on the values of &#39;cllr&#39;, &#39;a&#39; and &#39;b&#39;
     if (cllr &lt;= a) return (-1)
@@ -240,13 +240,13 @@ simulate_sprt = function(p) {
 
 # Run simulation for various values of P
 simulate_sprt(0.3)</code></pre>
-<pre><code>## Iterations:  81 
+<pre><code>## Iterations:  45 
 ## Accept:  P &lt;= 0.45 , Reject:  P &gt;= 0.55</code></pre>
 <pre class="r"><code>simulate_sprt(0.56)</code></pre>
-<pre><code>## Iterations:  137 
+<pre><code>## Iterations:  177 
 ## Accept:  P &gt;= 0.55 , Reject:  P &lt;= 0.45</code></pre>
 <pre class="r"><code>simulate_sprt(0.54)</code></pre>
-<pre><code>## Iterations:  297 
+<pre><code>## Iterations:  629 
 ## Accept:  P &gt;= 0.55 , Reject:  P &lt;= 0.45</code></pre>
 
 

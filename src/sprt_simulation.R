@@ -19,16 +19,16 @@ sequential_probability_ratio_test = function(input_sequence, alpha, beta, theta)
 	theta0 = theta[1]
 	theta1 = theta[2]
 
-	# Calculate the lower and upper bounds for the stopping threshold
-	a = log(beta / (1 - alpha))
-	b = log((1 - beta) / alpha)
-
 	# Calculate L(theta) for Bernoulli
 	L_theta0 = (theta0 ^ input_sequence_sum) * ((1 - theta0) ^ (n - input_sequence_sum))
 	L_theta1 = (theta1 ^ input_sequence_sum) * ((1 - theta1) ^ (n - input_sequence_sum))
 
 	# Calculate the cumulative sum of the log-likelihood ratio
 	cllr = log(L_theta1 / L_theta0)
+
+    # Calculate the lower and upper bounds for the stopping threshold
+	a = log(beta / (1 - alpha))
+	b = log((1 - beta) / alpha)
 
 	# Return -1, 0 or 1 based on the values of 'cllr', 'a' and 'b'
 	if (cllr <= a) return (-1)
