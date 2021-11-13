@@ -1,3 +1,16 @@
+# R Program to simulate the Sequential Probability Ratio test for Bernoulli trials
+
+# Team Members:
+
+# Animesh Sharma                - as3592
+# Wanying Mo                    - wm318
+# Yaniv Bronshtein              - yb262
+# Venkata Krishnam Raju Dalta   - vkd20
+# Vipul Gharde                  - vig4
+# Aditya Maheshwari             - am2971
+# Toshitt Ahuja                 - ta498
+# Fan Shen                      - fs470
+
 sequential_probability_ratio_test = function(input_sequence, alpha, beta, theta) {
 	n = length(input_sequence)
 	input_sequence_sum = sum(input_sequence)

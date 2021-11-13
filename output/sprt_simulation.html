@@ -172,7 +172,20 @@ pre code {
 </div>
 
 
-<pre class="r"><code>sequential_probability_ratio_test = function(input_sequence, alpha, beta, theta) {
+<pre class="r"><code># R Program to simulate the Sequential Probability Ratio test for Bernoulli trials
+
+# Team Members:
+
+# Animesh Sharma                - as3592
+# Wanying Mo                    - wm318
+# Yaniv Bronshtein              - yb262
+# Venkata Krishnam Raju Dalta   - vkd20
+# Vipul Gharde                  - vig4
+# Aditya Maheshwari             - am2971
+# Toshitt Ahuja                 - ta498
+# Fan Shen                      - fs470
+
+sequential_probability_ratio_test = function(input_sequence, alpha, beta, theta) {
     n = length(input_sequence)
     input_sequence_sum = sum(input_sequence)
     
@@ -227,13 +240,13 @@ simulate_sprt = function(p) {
 
 # Run simulation for various values of P
 simulate_sprt(0.3)</code></pre>
-<pre><code>## Iterations:  83 
+<pre><code>## Iterations:  81 
 ## Accept:  P &lt;= 0.45 , Reject:  P &gt;= 0.55</code></pre>
 <pre class="r"><code>simulate_sprt(0.56)</code></pre>
-<pre><code>## Iterations:  89 
+<pre><code>## Iterations:  137 
 ## Accept:  P &gt;= 0.55 , Reject:  P &lt;= 0.45</code></pre>
 <pre class="r"><code>simulate_sprt(0.54)</code></pre>
-<pre><code>## Iterations:  159 
+<pre><code>## Iterations:  297 
 ## Accept:  P &gt;= 0.55 , Reject:  P &lt;= 0.45</code></pre>
 
 
